@@ -40,6 +40,7 @@ const app = {
 					src: "imgs/On_the_Rocks_poster.jpeg",
 				},
 			],
+			cloneGallery: [],
 			searchButton: false,
 			search: "",
 			enlargeImage: false,
@@ -56,9 +57,10 @@ const app = {
 	},
 	computed: {
 		filteredList() {
-			return this.gallerys.filter((gallery) => {
+			this.cloneGallery = this.gallerys.filter((gallery) => {
 				return gallery.title.toLowerCase().includes(this.search.toLowerCase());
 			});
+			return this.cloneGallery;
 		},
 	},
 };
